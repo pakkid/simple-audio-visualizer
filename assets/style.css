@@ -31,20 +31,29 @@ body {
 }
 
 #play-pause {
-    margin-bottom: 10px;
-    padding: 20px 40px;
-    font-size: 24px;
+    font-size: 100px;
     background: none;
-    border: 2px solid white;
-    border-radius: 10px;
     color: white;
     cursor: pointer;
+    border-style: none;
+}
+
+#audio-upload {
+    font-size: 16px;
+    padding: 10px;
+    background: none;
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 10px; /* Rounded corners */
 }
 
 .popup {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.295);
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -60,6 +69,7 @@ body {
     border: 1px solid white;
     color: white;
     cursor: pointer;
+    border-radius: 10px; /* Rounded corners */
 }
 
 .popup.fade-out {
