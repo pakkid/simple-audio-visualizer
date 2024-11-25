@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const audioUpload = document.getElementById('audio-upload');
     const canvas = document.getElementById('visualizer');
     const playPauseButton = document.getElementById('play-pause');
+    const popup = document.getElementById('popup');
+    const closePopupButton = document.getElementById('close-popup');
     let audioContext, source, analyser, dataArray, bufferLength, canvasContext, audioBuffer;
     let isPlaying = false;
     let hue = 0;
@@ -49,8 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 setupAudioNodes();
                 source.start(0);
                 playPauseButton.innerHTML = '<span class="iconify" data-icon="ic:round-pause" data-inline="false"></span>';
+                popup.classList.add('fade-out');
             }
             isPlaying = !isPlaying;
+        });
+
+        closePopupButton.addEventListener('click', function() {
+            popup.classList.add('fade-out');
         });
 
         // Load default audio
@@ -62,9 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 audioContext.decodeAudioData(data, function(buffer) {
                     audioBuffer = buffer;
                     setupAudioNodes();
-                    source.start(0);
-                    playPauseButton.innerHTML = '<span class="iconify" data-icon="ic:round-pause" data-inline="false"></span>';
-                    isPlaying = true;
                     draw();
                 });
             })
