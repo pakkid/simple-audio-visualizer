@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     isPlaying = true;
                     draw();
                 });
-            });
+            })
+            .catch(error => console.error('Error loading default audio:', error));
     } else {
         console.error('Required elements not found');
     }
